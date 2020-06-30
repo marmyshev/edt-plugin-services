@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.mard.dt.versioning.internal.ui.UiExecutableExtensionFactory:org.mard.dt.versioning.internal.ui.IncrementProjectVersionHandler"
+            description="Get configuration version and increment last segment digit"
+            id="org.mard.dt.versioning.ui.IncrementVersion"
+            name="Increment version">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com._1c.g5.v8.dt.navigator.ui.navigator.popup?after=group.generate">
+         <command
+               commandId="org.mard.dt.versioning.ui.IncrementVersion"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <count
+                           value="1">
+                     </count>
+                     <iterate
+                           operator="and">
+                        <instanceof
+                              value="org.eclipse.core.resources.IProject">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.core.resources.projectNature"
+                              value="com._1c.g5.v8.dt.core.V8ConfigurationNature">
+                        </test>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Versioning UI plugin for EDT
+Bundle-SymbolicName: org.mard.dt.versioning.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: org.mard.dt.versioning.internal.ui.Activator
+Bundle-Vendor: Dmitriy Marmyshev
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: org.mard.dt.versioning.ui
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.13.400",
+ org.eclipse.emf.ecore;bundle-version="2.18.0"
+Import-Package: com._1c.g5.v8.bm.core;version="7.2.0",
+ com._1c.g5.v8.bm.integration;version="9.0.0",
+ com._1c.g5.v8.dt.core.platform;version="10.0.0",
+ com._1c.g5.v8.dt.metadata.mdclass;version="8.2.0",
+ com._1c.g5.wiring;version="2.0.0",
+ com._1c.g5.wiring.binder;version="1.1.0",
+ com.google.inject,
+ com.google.inject.binder;version="1.3.0"
